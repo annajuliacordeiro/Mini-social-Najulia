@@ -14,4 +14,18 @@ function curtir() {
 }
 }
 
+function descurtir() {
+
+ if(curtido == false){
+   dislikeCount++;
+   descurtido = true;
+  document.getElementById("likeCount").innerText = likeCount;
+
+}else{
+    dislikeCount--;
+   descurtido = false;
+  document.getElementById("likeCount").innerText = likeCount;
+}
+ }
+
 document.getElementById("likeBtn").addEventListener("click", curtir);
