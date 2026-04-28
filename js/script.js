@@ -1,36 +1,69 @@
+// ==== Estado dados de aplicação ===
 let likeCount = 0;
-let desCount = 0;
-
-let curtido = false; // flag booleana
+let dislikeCount = 0;
+let curtido = false;
 let descurtido = false;
 
-function curtir() {
+// === Service (regras de negócio)
 
- if(curtido == false){
+
+function curtir() {
+  if (curtido == false){
     likeCount++;
     curtido = true;
-    document.getElementById("likeCount").innerText = likeCount;
- }else{
+
+    if(descurtido == true){
+      dislikeCount--;
+      descurtido = false;
+
+    }
+
+  }else{
     likeCount--;
     curtido = false;
-    document.getElementById("likeCount").innerText = likeCount;
- }
+  }
+
 }
 
-
-
- function deslike () {
-if(descurtido == false){
-    desCount++;
+function descurtir() {
+  if(descurtido == false){
+    dislikeCount++;
     descurtido = true;
-    document.getElementById("desCount").innerText = desCount;
- }else{
-    desCount--;
+
+    if(curtido == true){
+      likeCount--;
+      curtido = false;
+    }
+
+  }
+  else{
+    dislikeCount--;
     descurtido = false;
-    document.getElementById("desCount").innerText = desCount;
- }
-  
+  }
 }
 
-document.getElementById("likeBtn").addEventListener("click", curtir);
-document.getElementById("desBtn").addEventListener("click", deslike);
+//=== VIEWS (interface)
+
+function atualizarTela(){
+   document.getElementById("likeCount").innerText = likeCount;
+   document.getElementById("dislikeCount").innerText = dislikeCount;
+}
+
+//=== CONTROLLER (Intermediação evento/regras de negócio)
+
+function clicarCurtir(){
+curtir();
+atualizarTela();
+}
+
+function clicarDescurtir(){
+descurtir();
+atualizarTela();
+}
+
+//=== EVENTOS === 
+document.getElementById("likeBtn").addEventListener("click", clicarCurtir);
+document.getElementById("dislikeBtn").addEventListener("click", clicarDescurtir); 
+
+// === Inicialização de tela ===
+atualizarTela();

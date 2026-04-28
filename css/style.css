@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f8bbe9;
+  background-color: #e7bbf8;
   color: #fff;
 }
 
@@ -13,7 +13,7 @@ header {
 
 .logo {
   font-family: 'Pacifico', cursive;
-  color: #ff00bfc4;
+  color: #b700ffc4;
   font-size: 40px;
 }
 
@@ -23,7 +23,7 @@ header {
 }
 
 .post {
-  background-color: #f860df;
+  background-color: #b700ffc4;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px #0f1f16;
@@ -49,11 +49,11 @@ header {
 
 .name {
   font-weight: bold;
-  color: #f860df;
+  color: #ffffff;
 }
 
 .username {
-  color: #f860df;
+  color: #fdfdfd;
   margin-left: 5px;
 }
 
@@ -66,8 +66,8 @@ header {
 }
 
 button {
-  background-color: #f8bbe9;
-  color: #000000;
+  background-color: #f682fa;
+  color: #ffffff;
   border: none;
   padding: 8px 15px;
   border-radius: 20px;
